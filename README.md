@@ -14,15 +14,9 @@ Este repositório contém uma coleção de aplicativos Flutter que foram desenvo
     git clone https://github.com/seuusuario/Flutter-Dio
     ```
 
-2. Navegue até o diretório do aplicativo que deseja explorar:
+2. Abra o projeto no seu editor de código preferido (por exemplo, Visual Studio Code) e execute o aplicativo em um emulador ou dispositivo físico.
 
-    ```
-    cd app1
-    ```
-
-3. Abra o projeto no seu editor de código preferido (por exemplo, Visual Studio Code) e execute o aplicativo em um emulador ou dispositivo físico.
-
-4. Explore o código-fonte, experimente fazer alterações e divirta-se aprendendo Flutter!
+3. Explore o código-fonte, experimente fazer alterações e divirta-se aprendendo Flutter!
 
 ## Contribuição
 
@@ -30,7 +24,7 @@ Se você encontrar erros, problemas ou tiver sugestões de melhorias para qualqu
 
 ## Contato
 
-Se tiver alguma dúvida ou sugestão sobre os aplicativos ou o curso em geral, sinta-se à vontade para entrar em contato comigo através do meu e-mail [seuemail@example.com](mailto:seuemail@example.com).
+Se tiver alguma dúvida ou sugestão sobre os aplicativos ou o curso em geral, sinta-se à vontade para entrar em contato comigo através do meu e-mail [phjustino125@gmail.com](mailto:seuemail@example.com).
 
 ## Agradecimentos
 
