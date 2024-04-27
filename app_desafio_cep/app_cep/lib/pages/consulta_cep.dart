@@ -162,6 +162,10 @@ class _CepPageBack4AppState extends State<CepPageBack4App> {
                     ),
                     // Definindo o tipo de teclado para apenas números.
                     keyboardType: TextInputType.number,
+                    keyboardAppearance: Brightness.dark,
+                    strutStyle: StrutStyle.fromTextStyle(
+                      const TextStyle(fontSize: 18),
+                    ),
                     // Definindo um tratamento de evento para capturar o valor do CEP digitado.
                     onChanged: (value) => fetchCepInfo(value.replaceAll(RegExp(r'[^0-9]'), '')),
                   ),
