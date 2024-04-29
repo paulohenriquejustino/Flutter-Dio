@@ -1,14 +1,14 @@
 // ignore_for_file: avoid_print
-
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 
 class PerfilPage extends StatefulWidget {
-  const PerfilPage({Key? key}) : super(key: key);
+  const PerfilPage({super.key});
 
   @override
   State<PerfilPage> createState() => _PerfilPageState();
@@ -50,7 +50,9 @@ class _PerfilPageState extends State<PerfilPage> {
           backgroundColor: Colors.orange,
           centerTitle: true,
           elevation: 0,
-          title: const Text("Perfil"),
+          title: const Text("Perfil",
+            style: TextStyle(color: Colors.white, fontSize: 28),
+          ),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -59,6 +61,7 @@ class _PerfilPageState extends State<PerfilPage> {
             child: Column(
               children: [
                 CircleAvatar(
+                  backgroundColor: Colors.orange,
                   radius: 100,
                   // COloca no background a foto tirada pelo usuario.
                   backgroundImage:  image != null ? FileImage(File(image!.path)) : null,
@@ -72,7 +75,7 @@ class _PerfilPageState extends State<PerfilPage> {
                     },
                     child: const Text(
                       'Selecione uma imagem',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
                 ),
@@ -80,9 +83,14 @@ class _PerfilPageState extends State<PerfilPage> {
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: TextField(
+                    style: const TextStyle(color: Colors.black, fontSize: 15),
+                    maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                    keyboardType: TextInputType.name,
+                    keyboardAppearance: Brightness.dark,
+                    maxLength: 40,
                     controller: nomeController,
                     decoration: InputDecoration(
-                      hintText: 'Digite seu nome:',
+                      hintText: 'Digite primeiro nome:',
                       labelText: 'Nome',
                       labelStyle: const TextStyle(color: Colors.black, fontSize: 15),
                       border: OutlineInputBorder(
@@ -94,7 +102,13 @@ class _PerfilPageState extends State<PerfilPage> {
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: TextField(
+                    // Definindo a quantidade de números que o usuario pode digitar.
+                    maxLength: 11,
+                    // Forçando o teclado número ir até 11 digitos.
+                    style: const TextStyle(color: Colors.black, fontSize: 15),
+                    maxLengthEnforcement: MaxLengthEnforcement.enforced,
                     keyboardType: TextInputType.number,
+                    keyboardAppearance: Brightness.dark,
                     controller: numeroController,
                     decoration: InputDecoration(
                       hintText: 'Digite seu número:',
@@ -119,16 +133,20 @@ class _PerfilPageState extends State<PerfilPage> {
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.save,
-                    color: Colors.black,
-                    size: 20,
+                    color: Colors.white,
+                    size: 18,
                   ),
                   label: const Text(
-                    'Salvar alterações',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    'SALVAR O CONTATO',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.white,
+                    shape: const StadiumBorder(
+                      side: BorderSide(color: Colors.orange, width: 2.5),
+                    ),
+                    backgroundColor: Colors.orange,
+                    foregroundColor: Colors.orange,
                   ),
                 ),
               ],

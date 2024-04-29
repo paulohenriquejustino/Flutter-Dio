@@ -123,7 +123,6 @@ class _TopBarState extends State<TopBar> {
                   padding: const EdgeInsets.only(
                     left: 20,
                     right: 20,
-                    
                   ),
                   child: SizedBox(
                     height: 60,
