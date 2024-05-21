@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:lista_de_contatos/pages/repository/contato_repository.dart';
 
-class ContatoApiPage extends StatefulWidget {
+class ContatoApiPage extends StatefulWidget  {
   const ContatoApiPage({super.key});
   
   @override
@@ -17,7 +17,7 @@ class _ContatoApiPageState extends State<ContatoApiPage> {
   @override
   void initState() {
     super.initState();
-    fetchContatoList().then((map) {
+    listandoContatos().then((map) {
       setState(() {
         results = map;
       });
@@ -27,7 +27,7 @@ class _ContatoApiPageState extends State<ContatoApiPage> {
     });
   }
 
-  Future<List<Results>> fetchContatoList() async {
+  Future<List<Results>> listandoContatos() async {
   try {
     final response = await http.get(
       Uri.parse('https://parseapi.back4app.com/classes/ListaDeContatos'),
@@ -49,27 +49,8 @@ class _ContatoApiPageState extends State<ContatoApiPage> {
   }
 }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: ListView.builder(
-          itemCount: results.length,
-          itemBuilder: (context, index) {
-            return  Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                color: Colors.blue,
-                height: 80,
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width,
-                child: Text(results[index].nome ?? ""),
-              ),
-            );
-          },
-        )
-      )
-    );
+    return const Scaffold();
   }
 }

@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, non_constant_identifier_names
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class _PerfilPageState extends State<PerfilPage> {
   TextEditingController nomeController = TextEditingController();
   TextEditingController numeroController = TextEditingController();
 
-  Future<void> sendNameAndNumberToBack4App(String nome, String numero, String? imagePath) async {
+  Future<void> SalvarContatosBack4App(String nome, String numero, String? imagePath) async {
     final response = await http.post(
       Uri.parse('https://parseapi.back4app.com/classes/ListaDeContatos'),
       headers: {
@@ -124,7 +124,7 @@ class _PerfilPageState extends State<PerfilPage> {
                 ElevatedButton.icon(
                   onPressed: () {
                     if (nomeController.text.isNotEmpty && numeroController.text.isNotEmpty) {
-                      sendNameAndNumberToBack4App(nomeController.text, numeroController.text, image?.path);
+                      SalvarContatosBack4App(nomeController.text, numeroController.text, image?.path);
                       setState(() {});
                       Navigator.pop(context);
                     } else {

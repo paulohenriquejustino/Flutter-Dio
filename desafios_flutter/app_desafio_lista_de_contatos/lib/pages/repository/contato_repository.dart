@@ -1,4 +1,6 @@
-class ContatoListApi {
+import 'package:flutter/material.dart';
+
+class ContatoListApi extends ChangeNotifier {
   late List<Results> results;
 
   ContatoListApi({required this.results});
@@ -25,6 +27,8 @@ class ContatoListApi {
     data['results'] = results.map((v) => v.toJson()).toList();
     return data;
   }
+
+  fetchContatoList() {}
 }
 
 class Results {
@@ -65,4 +69,5 @@ class Results {
     data['path_img'] = pathImg;
     return data;
   }
+  
 }
