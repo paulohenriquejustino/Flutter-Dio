@@ -8,7 +8,6 @@ import 'package:http/http.dart' as http;
 class CepBack4AppRepository {
   // Criando um Dio.
   final _dio = Dio();
-
   // Configuração inicial do repositório
   CepBack4AppRepository() {
     // Configura o cabeçalho de autenticação
